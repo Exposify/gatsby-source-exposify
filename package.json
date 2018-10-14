@@ -1,0 +1,23 @@
+{
+  "name": "gatsby-source-exposify",
+  "version": "2.0.0",
+  "description": "Use real estate properties from Exposify and use them on a Gatsby website.",
+  "main": "gatsby-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-transformer-plugin",
+    "exposify",
+    "real-estate"
+  ],
+  "author": "Niklas Ravnsborg-Gjertsen",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "node-fetch": "^2.1.2",
+    "query-string": "^6.1.0"
+  }
+}
