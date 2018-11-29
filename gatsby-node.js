@@ -12,6 +12,15 @@ exports.sourceNodes = (
 	// Helper function that processes a photo to match Gatsby's node structure
 	const processProperty = property => {
 		const nodeId = createNodeId(`exposify-property-${property.id}`)
+
+		// The raw field value can contain strings as well as numbers or booleans.
+		// For Gatsby to be able to build a schema we need to make it all the
+		// same type - in this case a string.
+		property.attributes.fields = property.attributes.fields.map(field => {
+			field.attributes.raw_value = String(field.attributes.raw_value)
+			return field
+		})
+
 		const nodeContent = JSON.stringify(property)
 		const nodeContentDigest = crypto
 			.createHash('md5')
